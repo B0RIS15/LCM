@@ -50,16 +50,14 @@ def generation():
         if multiplicity1(a, prim) == True and multiplicity2(a, m) == True:
             break
     return a, x, c, m
+    
 
 def LCG(a, x, c, m):
     x = (a * x + c) % m
     return x
     
 n = int(input("iteration - "))
-a = generation()[0]
-x = generation()[1]
-c = generation()[2]
-m = generation()[3]
+a, x, c, m = generation()[0], generation()[1], generation()[2], generation()[3]
 for i in range(n):
     x = LCG(a, x, c, m)
     print(x)
